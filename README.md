@@ -1,4 +1,4 @@
-# The Damned V.0.0.0
+# The Damned V.0.0.1
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! (In Very beggining stages)
 
 ## Index:
@@ -22,7 +22,7 @@ ___
 - Create Basic Map
     - [x] Complete Research on your topic
     - [x] Create Wireframe for demo level
-    - [] Setup PyGame Window
+    - [x] Setup PyGame Window
     - [] Impliment Demo Level design into Pygame Background
 - Create Objects
     - [] Create Heroes Class
