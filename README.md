@@ -22,6 +22,7 @@ ___
 - Create Basic Map
     - [x] Complete Research on your topic
     - [x] Create Wireframe for demo level
+    - [] Setup PyGame Window
     - [] Impliment Demo Level design into Pygame Background
 - Create Objects
     - [] Create Heroes Class
