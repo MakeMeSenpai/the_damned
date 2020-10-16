@@ -25,9 +25,9 @@ ___
     - [x] Setup PyGame Window
     - [] Impliment Demo Level design into Pygame Background
 - Create Objects
-    - [] Create Heroes Class
+    - [x] Create Heroes Class
     - [] Create Sub-Hero Classes
-    - [] Create Enemies Class
+    - [x] Create Enemies Class
     - [] Create Sub-Enemy Classes
     - [] Create Towers Class
     - [] Create Sub-Tower Classes
