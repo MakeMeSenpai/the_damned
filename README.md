@@ -1,4 +1,4 @@
-# The Damned V.0.0.1
+# The Damned V.0.0.5
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! (In Very beggining stages)
 
 ## Index:
@@ -7,6 +7,8 @@ This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/M
     2. [Potential Features:](#potential-features)
     3. [Previous Updates:](#previous-updates)
 2. [Tutorial](#tutorial)
+    1. [Enviroment Setup:](#enviroment-setup)
+    2. [How To Play:](#how-to-play)
 3. [Conclusion](#conclusion)
 
 ___
@@ -63,11 +65,19 @@ ___
 
 
 ### Previous Updates:
-- 0.0.0
-    - No Previous Updates
+{Last Update: 10/15/20}
+- 0.0.2
+    - An empty window now displays when you run the application. Which isn't very exciting but its defenitly a start. Code is being augmented and prepped for game creation! 
 ___
 ## Tutorial
-It Empty! ... for now
+### Enviroment Setup
+    - You will need Python3 and git downloaded onto your computer
+    - Open your computers terminal and go into a folder you would like this game to stay in. 
+    - Once this is found use ```$git clone https://github.com/MakeMeSenpai/the_damned``` to install the game locally
+    - Next, you will go inside that folder and use ```$pip3 install requirements.txt``` grabbing the game's necessary packages
+    - Finally, you can run the game using ```$python3 main.py```
+### How To Play
+    - There's no game to play quite yet! I've been having touble with Pygames blit functions.
 
 ___
 ## Conclusion
