@@ -17,6 +17,7 @@ class Game:
         self.enemies = ["Knight"] # Other human enemies
         self.health = 150
         self.points = 150
+        # TODO: background image does not show up!
         self.bg = pygame.image.load("demo-level.png") # "./Assests/Backgrounds/demo-level.png") # os.path.join("Assets/Backgrounds", "demo-level.png")) #.convert()
         self.clicks = [] #mouse positions
 
@@ -46,6 +47,7 @@ class Game:
     def draw(self):
         """ Creates our background
         :returns: None"""
+        # TODO: Nothing seems to be drawing
         self.win.blit(self.bg, (0, 0))
         # used for path_creator()
         # if self.path_creator() == True:
