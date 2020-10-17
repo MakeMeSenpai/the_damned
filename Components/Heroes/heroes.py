@@ -47,6 +47,6 @@ class Heroes:
         """ Enemies loses stamina and returns if hero needs a break
         :param damage: int
         :return: Bool"""
-        self.health -= damage
-        if self.health <= 0:
+        self.stamina -= damage
+        if self.stamina <= 0:
             return True

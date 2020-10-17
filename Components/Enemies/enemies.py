@@ -1,6 +1,8 @@
 # Components/Enemies/enemies.py
 import pygame
 
+"""May have to change this into pathfinders for allies to also
+take use of in the future. (remember to reverse path for allies)"""
 class Enemies:
     imgs = []
 
@@ -11,7 +13,11 @@ class Enemies:
         self.height = height
         self.animation_count = 0
         self.health = 5
-        self.path = []
+        self.img = None
+        # concept path for demo-level
+        self.path = [(14, 124), (943, 193), (951, 387), (833, 448), (691, 451), (239, 484), (156, 499), (135, 540), (149, 758), (214, 807), (736, 806), (784, 761), (803, 683), (838, 636)]
+        self.path_pos = 0
+        self.move_count = 0
 
     def draw(self, win):
         """ Draws our enemies using assets
@@ -39,8 +45,14 @@ class Enemies:
         return False
     
     def move(self):
-        """ Moves enemies
+        """ Moves enemies by path points, and postion
         :return: None """
+        x1, y1 = self.path[self.path_pos]
+        x2, y2 = self.path[self.path_pos + 1]
+        
+        self.move_count += 1
+        dirn = (x2-x1, y2-y1)
+        pos = (self.x + dirn[0] * self.move_count, self.y + dirn[1] * self.move_count)
         pass
 
     def hit(self, damage):

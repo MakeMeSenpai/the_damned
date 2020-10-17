@@ -1,4 +1,4 @@
-# The Damned V.0.0.6
+# The Damned V.0.0.7
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! (In Very beggining stages)
 
 ## Index:
@@ -25,12 +25,12 @@ ___
     - [x] Complete Research on your topic
     - [x] Create Wireframe for demo level
     - [x] Setup PyGame Window
-    - [] Impliment Demo Level design into Pygame Background
+    - [ ] Impliment Demo Level design into Pygame Background
 - Create Objects
     - [x] Create Heroes Class
-    - [ ] Create Sub-Hero Classes
+    - [x] Create Sub-Hero Classes
     - [x] Create Enemies Class
-    - [ ] Create Sub-Enemy Classes
+    - [x] Create Sub-Enemy Classes
     - [ ] Create Towers Class
     - [ ] Create Sub-Tower Classes
     - [ ] **Stretch:** Create Specials Class
@@ -39,7 +39,7 @@ ___
     - [ ] Heros must be able to move on the path
     - [ ] Enemies must follow the path and attack Home base. Bringing down Hero's Health
     - [ ] Enemies should stop if they run into the Hero
-    - Heroes and Enemies should be able to attack one another. Thus killing Enemies and bringing down a Hero's Stamina
+    - [ ] Heroes and Enemies should be able to attack one another. Thus killing Enemies and bringing down a Hero's Stamina
 - Towers and CRUD
     - [ ] Players should be able to create towers by drag and drop.
     - [ ] Players should be able to Read what level a tower is, after clicking it
@@ -50,6 +50,10 @@ ___
     - [ ] **Stretch:** Towers should be able to be destroyed by special enemies.
 
 ### Potential Features:
+- GitMaster
+    - [ ] Set up tester branch -for expirements (such as a Feature request)
+    - [ ] Set up developer branch -for actual development
+    - [ ] Set up demo branch -for prereleases and bug fixing (such as a hotfix branch)
 - Level-up
     - [ ] Create a level-up system for the hero
     - [ ] let players upgrade their hero or potetailly unlock new towers!
@@ -65,27 +69,29 @@ ___
 
 
 ### Previous Updates:
-{Last Update: 10/15/20}
-- 0.0.2
-    - An empty window now displays when you run the application. Which isn't very exciting but its defenitly a start. Code is being augmented and prepped for game creation! 
+{Last Update: 10/17/20}
+- 0.0.7
+    - Nothing but a white screen appears. Not very exciting but there are currently issues with our Pygame's draw funcs. So Additions that have been added are all none-visible. Such as object creations etc.
 ___
 ## Tutorial
 
 ### Enviroment Setup
-    - You will need Python3 and git downloaded onto your computer
-    - Open your computers terminal and go into a folder you would like this game to stay in. 
-    - Once this is found use 
-    ```$git clone https://github.com/MakeMeSenpai/the_damned```
-    to install the game locally
-    - Next, you will go inside that folder and use 
-    ```$pip3 install requirements.txt```
-    grabbing the game's necessary packages
-    - Finally, you can run the game using ```$python3 main.py```
+- You will need Python3 and git downloaded onto your computer
+- Open your computers terminal and go into a folder you would like this game to stay in. 
+- Once this is found use 
+```$git clone https://github.com/MakeMeSenpai/the_damned```
+to install the game locally
+- Next, you will go inside that folder and use 
+```$pip3 install -r requirements.txt```
+grabbing the game's necessary packages
+- Finally, you can run the game using 
+```$python3 main.py```
 
 ### How To Play
-    - There's no game to play quite yet! I've been having touble with Pygames blit functions.
+- There's no game to play quite yet! I've been having touble with Pygames blit functions.
 
 ___
 ## Conclusion
 If you'd like to learn more about how to make a Tower Defence game, check out this video by TechwithTim. https://www.youtube.com/watch?v=iLHAKXQBOoA&list=PL0JD8YOK85RoSodvtsgYIgwoBkZF6MHr3&index=17&app=desktop
+Also! If you have an idea or want to recommend a feature, please do so in feature_requests.md 
 Thanks for checking this out. Feel free to leave feedback, and share!
