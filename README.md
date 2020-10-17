@@ -31,8 +31,8 @@ ___
     - [x] Create Sub-Hero Classes
     - [x] Create Enemies Class
     - [x] Create Sub-Enemy Classes
-    - [ ] Create Towers Class
-    - [ ] Create Sub-Tower Classes
+    - [x] Create Towers Class
+    - [x] Create Sub-Tower Classes
     - [ ] **Stretch:** Create Specials Class
     - [ ] **Stretch:** Create Sub-Special Class
 - Functionality 

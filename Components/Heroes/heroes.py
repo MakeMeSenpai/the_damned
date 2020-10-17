@@ -1,5 +1,7 @@
 # Components/Heroes/heroes.py
 import pygame
+import math
+import os
 
 class Heroes:
     imgs = []
@@ -11,42 +13,64 @@ class Heroes:
         self.height = height
         self.animation_count = 0
         self.stamina = 5
-        self.path = []
+        #TODO: concept path for demo-level, needs to have wider width for players to move on
+        self.path = [(14, 124), (943, 193), (951, 387), (833, 448), (691, 451), (239, 484), (156, 499), (135, 540), (149, 758), (214, 807), (736, 806), (784, 761), (803, 683), (838, 636)]
+        self.img = None
+        self.dis = 0
+        self.path_pos = 0
+        self.move_count = 0
+        self.move_dis = 0
+        self.imgs = []
+        self.flipped = False
+        self.max_stamina = 0
+        self.special = ""
+        # ability_points = 0
+        # activate_special = a certain number of ability_points
 
     def draw(self, win):
-        """ Draws our heroes using assets
+        """ Draws our enemies using assets
         :param win: surface
         :return None"""
-        # # Right now we don't have assets, but this will be implimented
-        # # in future development
-        # self.animation_count += 1
-        # self.image = self.imgs[self.animation_count]
-        # win.blit(self.image, (self.x, self.y))
-        # # resets our animation
-        # if self.animation_count >= len(self.imgs) - 1:
-        #     self.animation_count = 0
-        # moves our badies!
-        self.move()
+        self.img = self.imgs[self.animation_count]
+
+        win.blit(self.img, (self.x - self.img.get_width()/2, self.y- self.img.get_height()/2 - 35))
 
     def collision(self, X, Y):
-        """ Returns if heroes collides with an object
-        :param X: int
-        :param Y: int
-        :return None"""
+        """ Returns if enemies collides with an object
+        :param x: int
+        :param y: int
+        :return: Bool
+        """
         if X <= self.x + self.width and X >= self.x:
             if Y <= self.y + self.height and Y >= self.y:
                 return True
         return False
     
     def move(self):
-        """ Moves our heroes
-        :return: None """
+        """
+        Move hero using key inputs (wasd, or arrow keys, and spacebar to attack)
+        :return: None
+        """
         pass
 
     def hit(self, damage):
-        """ Enemies loses stamina and returns if hero needs a break
-        :param damage: int
-        :return: Bool"""
+        """
+        Returns if an enemy has died and removes one health
+        each call
+        :return: Bool
+        """
         self.stamina -= damage
         if self.stamina <= 0:
             return True
+        return False
+
+        self.x = self.path[0][0]
+        self.y = self.path[0][1]
+        self.img = None
+        self.dis = 0
+        self.path_pos = 0
+        self.move_count = 0
+        self.move_dis = 0
+        self.imgs = []
+        self.flipped = False
+        self.max_stamina = 0
