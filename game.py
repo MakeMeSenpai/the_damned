@@ -36,7 +36,6 @@ class Game:
         self.enemies = ["peasant", "knight", "archer", "murauder"]
         self.health = 150
         self.points = 250
-        # TODO: background image does not show up!
         self.bg = pygame.image.load(os.path.join("Assets/Backgrounds", "demo-level.png")) # "demo-level.png") # "./Assests/Backgrounds/demo-level.png") #.convert()
         self.clicks = [] #mouse positions
 
@@ -53,10 +52,10 @@ class Game:
                 if event.type == pygame.QUIT:
                     run = False
                 """ used for path_creator() """
-                pos = pygame.mouse.get_pos()
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    self.clicks.append(pos)
-                    print(self.clicks)
+                # pos = pygame.mouse.get_pos()
+                # if event.type == pygame.MOUSEBUTTONDOWN:
+                #     self.clicks.append(pos)
+                #     print(self.clicks)
                 """ Concept functions - impliments later """
                 # self.path_creator(event)
                 # self.level_selector()
@@ -70,8 +69,8 @@ class Game:
         self.win.fill((0, 255, 0))
         self.win.blit(self.bg, (0, 0)) # (self.width, self.height))
         """ used for path_creator() """
-        for p in self.clicks:
-            pygame.draw.circle(self.win, (155, 0, 155), (p[0], p[1]), 5, 0)
+        # for p in self.clicks:
+        #     pygame.draw.circle(self.win, (155, 0, 155), (p[0], p[1]), 5, 0)
         pygame.display.update()
     
     def path_creator(self, event):
