@@ -108,7 +108,7 @@ class Enemy:
 
     def hit(self, damage):
         """
-        Returns if an enemy has died and removes one health
+        Returns if an enemy has died and removes health
         each call
         :return: Bool
         """
@@ -116,14 +116,15 @@ class Enemy:
         if self.health <= 0:
             return True
         return False
-
-        self.x = self.path[0][0]
-        self.y = self.path[0][1]
-        self.img = None
-        self.dis = 0
-        self.path_pos = 0
-        self.move_count = 0
-        self.move_dis = 0
-        self.imgs = []
-        self.flipped = False
-        self.max_health = 0
+""" Used to delete item? """
+# self.x = self.path[0][0]
+# self.y = self.path[0][1]
+# self.img = None
+# self.dis = 0
+# self.path_pos = 0
+# self.move_count = 0
+# self.move_dis = 0
+# self.imgs = []
+# self.flipped = False
+# self.max_health = 0
+ 

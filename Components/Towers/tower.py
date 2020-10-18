@@ -45,7 +45,9 @@ class Tower:
     def draw_radius(self,win):
         if self.selected:
             # draw range circle
-            surface = pygame.Surface((self.range * 4, self.range * 4), pygame.SRCALPHA, 32)
+            # Surface((width, height), flags=0, depth=0, masks=None) -> Surface
+            radius = self.range * 4
+            surface = pygame.Surface((radius, radius), pygame.SRCALPHA, 32)
             pygame.draw.circle(surface, (128, 128, 128, 100), (self.range, self.range), self.range, 0)
 
             win.blit(surface, (self.x - self.range, self.y - self.range))

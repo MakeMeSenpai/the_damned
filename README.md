@@ -1,4 +1,4 @@
-# The Damned V.0.0.8
+# The Damned V.0.1.0
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for deeper description.
 
 ## Index:

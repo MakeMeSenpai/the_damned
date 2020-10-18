@@ -10,8 +10,8 @@ for x in range(1): # number of sprites for animation
     if x < 10:
         add_str = "0" + add_str
     imgs.append(pygame.transform.scale(
-        pygame.image.load(os.path.join("Assets/Enemies/knight", "walking_" + add_str + ".png")).convert_alpha(),
-        (100, 100))) # for an image name like Assests/Enemies/name.animation-name_03.png
+        pygame.image.load(os.path.join("Assets/Enemies/knight", "walking_" + add_str + ".PNG")).convert_alpha(),
+        (100, 100))) # for an image name like Assests/Enemies/name.animation-name_03.PNG
 
 class Knight(Enemy):
     """Armored foes who seek to bring the head of the beast back to 
@@ -23,3 +23,4 @@ class Knight(Enemy):
         self.imgs = imgs[:]
         self.max_health = 100
         self.health = self.max_health
+        

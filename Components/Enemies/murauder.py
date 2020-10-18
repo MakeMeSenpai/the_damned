@@ -10,8 +10,8 @@ for x in range(1): # number of sprites for animation
     if x < 10:
         add_str = "0" + add_str
     imgs.append(pygame.transform.scale(
-        pygame.image.load(os.path.join("Assets/Enemies/muraunder", "walking_" + add_str + ".png")).convert_alpha(),
-        (100, 100))) # for an image name like Assests/Enemies/name.animation-name_03.png
+        pygame.image.load(os.path.join("Assets/Enemies/muraunder", "walking_" + add_str + ".PNG")).convert_alpha(),
+        (100, 100))) # for an image name like Assests/Enemies/name.animation-name_03.PNG
 
 class Murauder(Enemy):
     """Nasty little buggers who destroy everything in

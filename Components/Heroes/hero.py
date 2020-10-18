@@ -63,14 +63,14 @@ class Hero:
         if self.stamina <= 0:
             return True
         return False
-
-        self.x = self.path[0][0]
-        self.y = self.path[0][1]
-        self.img = None
-        self.dis = 0
-        self.path_pos = 0
-        self.move_count = 0
-        self.move_dis = 0
-        self.imgs = []
-        self.flipped = False
-        self.max_stamina = 0
+""" kills player?"""
+# self.x = self.path[0][0]
+# self.y = self.path[0][1]
+# self.img = None
+# self.dis = 0
+# self.path_pos = 0
+# self.move_count = 0
+# self.move_dis = 0
+# self.imgs = []
+# self.flipped = False
+# self.max_stamina = 0

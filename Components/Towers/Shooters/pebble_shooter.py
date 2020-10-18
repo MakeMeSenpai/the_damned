@@ -5,8 +5,8 @@ import math
 from ..tower import Tower
 # from menu.menu import Menu
 
-# menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.png")).convert_alpha(), (120, 70))
-# upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.png")).convert_alpha(), (50, 50))
+# menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.PNG")).convert_alpha(), (120, 70))
+# upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.PNG")).convert_alpha(), (50, 50))
 
 
 tower_imgs = []
@@ -14,13 +14,13 @@ tower_imgs = []
 # load tower images
 for x in range(1):
     tower_imgs.append(pygame.transform.scale(
-        pygame.image.load(os.path.join("Assets/Towers/Shooters/pebble_shooter/tower_0" + str(x) + ".png")).convert_alpha(),
+        pygame.image.load(os.path.join("Assets/Towers/Shooters/pebble_shooter/tower_0" + str(x) + ".PNG")).convert_alpha(),
         (90, 90)))
 
 # load shooter images
 # for x in range(1):
 #     shooter_imgs.append(
-#         pygame.image.load(os.path.join("Assets/Towers/Shooters/pebble_shooter/shooter_0" + str(x) + ".png")).convert_alpha())
+#         pygame.image.load(os.path.join("Assets/Towers/Shooters/pebble_shooter/shooter_0" + str(x) + ".PNG")).convert_alpha())
 
 class Pebble_Shooter(Tower):
     """A shabby hut of allies thowing rocks
