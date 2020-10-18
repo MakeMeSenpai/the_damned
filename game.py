@@ -52,14 +52,14 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
-                # used for path_creator()
-                """pos = pygame.mouse.get_pos()
+                """ used for path_creator() """
+                pos = pygame.mouse.get_pos()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.clicks.append(pos)
                     print(self.clicks)
-                Concept functions - impliments later
-                self.path_creator(event)
-                self.level_selector()"""
+                """ Concept functions - impliments later """
+                # self.path_creator(event)
+                # self.level_selector()
             self.draw()
         pygame.quit()
     
@@ -69,9 +69,9 @@ class Game:
         # TODO: Nothing seems to be drawing
         self.win.fill((0, 255, 0))
         self.win.blit(self.bg, (0, 0)) # (self.width, self.height))
-        # used for path_creator()
-        """for p in self.clicks:
-            pygame.draw.circle(self.win, (155, 0, 155), (p[0], p[1]), 5, 0)"""
+        """ used for path_creator() """
+        for p in self.clicks:
+            pygame.draw.circle(self.win, (155, 0, 155), (p[0], p[1]), 5, 0)
         pygame.display.update()
     
     def path_creator(self, event):
