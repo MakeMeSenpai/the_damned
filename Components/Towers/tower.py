@@ -1,4 +1,4 @@
-# Componenets/Towers/towers.py
+# Componenets/Towers/tower.py
 import pygame
 import os
 import math

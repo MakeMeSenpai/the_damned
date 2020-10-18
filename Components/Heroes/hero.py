@@ -3,7 +3,7 @@ import pygame
 import math
 import os
 
-class Heroes:
+class Hero:
     imgs = []
 
     def __init__(self, x, y, width, height):

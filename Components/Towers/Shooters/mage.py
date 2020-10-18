@@ -2,14 +2,35 @@
 import pygame
 import os
 import math
-from ..towers import Towers
+from ..tower import Tower
+# from menu.menu import Menu
 
-class Mage(Towers):
+# menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.png")).convert_alpha(), (120, 70))
+# upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.png")).convert_alpha(), (50, 50))
+
+
+tower_imgs = []
+# TODO: Missing shooters for all towers
+# shooter_imgs = []
+# load tower images
+for x in range(1):
+    tower_imgs.append(pygame.transform.scale(
+        pygame.image.load(os.path.join("Assets/Towers/Shooters/mage/tower_0" + str(x) + ".png")).convert_alpha(),
+        (90, 90)))
+
+# load shooter images
+# for x in range(1):
+#     shooter_imgs.append(
+#         pygame.image.load(os.path.join("Assets/Towers/Shooters/mage/shooter_0", str(x) + ".png")).convert_alpha())
+
+class Mage(Tower):
     """Magic is on your side! Magic dwellers
     lvl1:witch hut lvl2:potion shack lvl3:black tower"""
     def __init__(self, x,y):
         super().__init__(x, y)
-        self.archer_count = 0
+        self.tower_imgs = tower_imgs[:]
+        # self.shooter_imgs = shooter_imgs[:]
+        self.shooter_count = 0
         self.range = 75
         self.original_range = self.range
         self.inRange = False
@@ -18,11 +39,21 @@ class Mage(Towers):
         self.original_damage = self.damage
         self.width = self.height = 90
         self.moving = False
-        self.name = "archer"
+        self.name = "mage"
+
+        # self.menu = Menu(self, self.x, self.y, menu_bg, [2000, 5000,"MAX"])
+        # self.menu.add_btn(upgrade_btn, "Upgrade")
+
+    # def get_upgrade_cost(self):
+    #     """
+    #     gets the upgrade cost
+    #     :return: int
+    #     """
+    #     return self.menu.get_item_cost()
 
     def draw(self, win):
         """
-        draw the arhcer tower and animated archer
+        draw the shooter tower and animated shooter
         :param win: surface
         :return: int
         """
@@ -30,22 +61,22 @@ class Mage(Towers):
         super().draw(win)
 
         if self.inRange and not self.moving:
-            self.archer_count += 1
-            if self.archer_count >= len(self.archer_imgs) * 10:
-                self.archer_count = 0
+            self.shooter_count += 1
+            if self.shooter_count >= len(self.shooter_imgs) * 10:
+                self.shooter_count = 0
         else:
-            self.archer_count = 0
+            self.shooter_count = 0
 
-        archer = self.archer_imgs[self.archer_count // 10]
+        shooter = self.shooter_imgs[self.shooter_count // 10]
         if self.left == True:
             add = -25
         else:
-            add = -archer.get_width() + 10
-        win.blit(archer, ((self.x + add), (self.y - archer.get_height() - 25)))
+            add = -shooter.get_width() + 10
+        win.blit(shooter, ((self.x + add), (self.y - shooter.get_height() - 25)))
 
     def change_range(self, r):
         """
-        change range of archer tower
+        change range of shooter tower
         :param r: int
         :return: None
         """
@@ -80,11 +111,11 @@ class Mage(Towers):
 
             if first_enemy.x > self.x and not(self.left):
                 self.left = True
-                for x, img in enumerate(self.archer_imgs):
-                    self.archer_imgs[x] = pygame.transform.flip(img, True, False)
+                for x, img in enumerate(self.shooter_imgs):
+                    self.shooter_imgs[x] = pygame.transform.flip(img, True, False)
             elif self.left and first_enemy.x < self.x:
                 self.left = False
                 for x, img in enumerate(self.archer_imgs):
-                    self.archer_imgs[x] = pygame.transform.flip(img, True, False)
+                    self.shooter_imgs[x] = pygame.transform.flip(img, True, False)
 
         return points

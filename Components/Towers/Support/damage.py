@@ -3,19 +3,35 @@
 # import os
 # import math
 # import time
-# from .tower import Towers
+# from .range import Range
+# # from menu.menu import Menu
 
-# imgs = [pygame.transform.scale(pygame.image.load(os.path.join("game_assets/support_towers", "8.png")).convert_alpha(), (90,90)),
-#               pygame.transform.scale(pygame.image.load(os.path.join("game_assets/support_towers", "9.png")).convert_alpha(), (90,90))]
+# # menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.png")).convert_alpha(), (120, 70))
+# # upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.png")).convert_alpha(), (50, 50))
 
-# class DamageTower(RangeTower):
+
+# tower_imgs = []
+# shooter_imgs = []
+# # load tower images
+# for x in range(1):
+#     tower_imgs.append(pygame.transform.scale(
+#         pygame.image.load(os.path.join("Assets/Towers/damage/tower_0" + str(x) + ".png")).convert_alpha(),
+#         (90, 90)))
+
+# # load shooter images
+# for x in range(1):
+#     shooter_imgs.append(
+#         pygame.image.load(os.path.join("Assets/Towers/damage/shooter_0" + str(x) + ".png")).convert_alpha())
+
+# class DamageTower(range):
 #     """
 #     add damage to surrounding towers
 #     """
 #     def __init__(self, x, y):
 #         super().__init__(x,y)
 #         self.range = 100
-#         self.tower_imgs = damage_imgs[:]
+#         self.tower_imgs = tower_imgs[:]
+#         self.shooter_imgs = shooter_imgs[:]
 #         self.effect = [0.5, 1]
 #         self.name = "damage"
 #         self.price = [2000]

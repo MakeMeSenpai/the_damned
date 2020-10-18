@@ -1,14 +1,15 @@
-# The Damned V.0.0.7
-This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! (In Very beggining stages)
+# The Damned V.0.0.8
+This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for deeper description.
 
 ## Index:
 1. [Checklist](#checklist)
     1. [MVP Todo:](#mvp-todo)
     2. [Potential Features:](#potential-features)
     3. [Previous Updates:](#previous-updates)
-2. [Tutorial](#tutorial)
+2. [Info](#info)
     1. [Enviroment Setup:](#enviroment-setup)
     2. [How To Play:](#how-to-play)
+    3. [More Lore:](#more-lore)
 3. [Conclusion](#conclusion)
 
 ___
@@ -69,11 +70,15 @@ ___
 
 
 ### Previous Updates:
-{Last Update: 10/17/20}
-- 0.0.7
+{Last Update: 10/18/20}
+- 0.0.8
+    - place holders have been added, as well as a boat load of code that we still can't see. I don't suggest coding blidly, but when you are stuck, you still gotta keep working. As well, More Lore was added to this page to give you a better insight on the world I am trying to build here.
+
+- 0.0.5
     - Nothing but a white screen appears. Not very exciting but there are currently issues with our Pygame's draw funcs. So Additions that have been added are all none-visible. Such as object creations etc.
+
 ___
-## Tutorial
+## Info
 
 ### Enviroment Setup
 - You will need Python3 and git downloaded onto your computer
@@ -89,6 +94,17 @@ grabbing the game's necessary packages
 
 ### How To Play
 - There's no game to play quite yet! I've been having touble with Pygames blit functions.
+
+### More Lore
+- In a world that is blind to the good of magic, mid evil kingdoms set to vanquish all evils. Forced into hiding again and again, you now wish to take over the land. and it seems that other magical beings are starting to detest the humans as well...
+- The Angel:
+    - Coming to this place to help those in need. You have been long appriciated by those who had fallen deathly ill. This was until they saw your wings... the kingdom has now claimed you guilty of which craft! Infecting the poor souls, and the sick you have helped now want you dead. Even the rightous can be considered monsters. Your goal is to reclaim the land for the Holy Father.
+- The Demon:
+    - Escaping from hell is no easy task. You find joy in slaughtering the weak. Damn them all! But now everyone knows about the monster you really are, and now want you dead. Your will is your own. Too much pride isn't always a bad thing and niehter is greed. They will feel your wrath as you take over the land.
+- The Vampire:
+    - You have been around for longer than you can rememeber. Must have been 4, or even 500 years since you first sunk your teeth into that windows neck. You spend most of your time reading, and enjoying elegancy. But the towns folk started to realize that people were disappearing. The night watch became more and more difficult to hide from, and you were caught in the act. Now the inputant humans want you dead. The daywalkers are nothing but insolent cattle, and now you must put them in their place.
+- The WereWolf:
+    - You found out with when you were 10 just what you were... blacking out and killing your childhood best friend. Werewolves have a lack of controll, especailly when young. Every full moon the tranformation period lasting longer, fur growing longer, and teeth growing sharper. It's not your fault you were born this way. You just wanted to be like everybody else. The last full moon as always changed you into your form, and you have better learned how to control it. However, now you just won't turn back. Stuck in your howling state, some noisey kids had peeped into your window and had sworn to see a monster. Now the townsmen want you dead. You tried to be friends with them, and you tried to be them; But time and time again they take. May vengence be yours.
 
 ___
 ## Conclusion
