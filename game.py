@@ -5,6 +5,12 @@ import math
 import os
 import time
 import random
+# Menues
+from Components.Menues.menu import Button
+from Components.Menues.menu import PlayPauseButton
+from Components.Menues.menu import VerticalButton
+from Components.Menues.menu import VerticalMenu
+from Components.Menues.menu import Menu
 # imports Heroes
 from Components.Heroes.hero import Hero
 from Components.Heroes.angel import Angel
@@ -28,6 +34,7 @@ from Components.Towers.Support.harvester import Harvester
 
 
 # Initiation
+pygame.font.init()
 """Level selection: load levels background, and paths"""
 # by default demo-level should be selected, we will impliment level selection later
 # level = ["lvl-1", "lvl 2", "lvl 3"...]
@@ -39,29 +46,32 @@ path = [(-10, 169), (999, 170), (999, 327), (871, 371), (699, 412), (220, 454), 
 # wave selector based on level -maybe need a database lvl.db||waves.db
 # Demo level waves (15 waves)
 waves = [
-    [1, 0, 0, 0],
-    [25, 1, 0, 0],
-    [0, 25, 1, 0],
-    [25, 0, 25, 1],
-    [50, 25, 0, 25],
-    [50, 50, 25, 0],
-    [50, 50, 50, 25],
-    [50, 50, 50, 50],
-    [100, 50, 50, 50],
-    [150, 100, 50, 50],
-    [200, 150, 100, 50],
-    [250, 200, 150, 100],
+    #demo demo wave lol
+    [25, 50, 25, 10]
+    # [1, 0, 0, 0],
+    # [25, 1, 0, 0],
+    # [0, 25, 1, 0],
+    # [25, 0, 25, 1],
+    # [50, 25, 0, 25],
+    # [50, 50, 25, 0],
+    # [50, 50, 50, 25],
+    # [50, 50, 50, 50],
+    # [100, 50, 50, 50],
+    # [150, 100, 50, 50],
+    # [200, 150, 100, 50],
+    # [250, 200, 150, 100],
 ]
 
-"""needed assets = pygame.transform.scale(pygame.image.load(os.path.join("Assets",".png")).convert_alpha(), (75, 75))"""
+"""needed assets = pygame.transform.scale(pygame.image.load(os.path.join("Assets",".PNG")).convert_alpha(), (75, 75))"""
 # Health bar asset
 # stamina bar asset
 # special move asset
 
-"""buy menu assets"""
-# Tower icon slots asset
-# such as harvester icon, and mage icon
-# empty slot/lock slot asset
+"""buy menu assets - temp icons"""
+buy_icon = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons","temp_buy.PNG")).convert(), (75, 75))
+locked_icon = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons","empty_slot.PNG")).convert(), (75, 75))
+temp_img = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons","temp_img.PNG")).convert(), (75, 75))
+pause_btn = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons","temp_pause.PNG")).convert(), (75, 75))
 
 """pause assets: a pause menu should appear with settings when clicked"""
 # music settings
@@ -92,19 +102,20 @@ class Game:
         self.timer = time.time()
         self.life_font = pygame.font.SysFont("comicsans", 65)
         self.selected_tower = None
-        # self.menu = VerticalMenu(self.width - side_img.get_width() + 70, 250, side_img)
-        # self.menu.add_btn(buy_archer, "buy_archer", 500)
-        # self.menu.add_btn(buy_archer_2, "buy_archer_2", 750)
-        # self.menu.add_btn(buy_damage, "buy_damage", 1000)
-        # self.menu.add_btn(buy_range, "buy_range", 1000)
+        self.menu = VerticalMenu(self.width - 100 + 70, 250, temp_img)# [some-asset].get_width() + 70, 250, [some-asset])
+        self.menu.add_btn(buy_icon, "buy_pebble_shooter", 2000)
+        self.menu.add_btn(buy_icon, "buy_mage", 2000)
+        self.menu.add_btn(buy_icon, "buy_harvester", 2000)
+        self.menu.add_btn(locked_icon, "empty_slot", 0)
         self.moving_object = None
         self.lvl_name = 250 #this should be an image but for now will be a int for sizing
         self.wave = 0
         self.current_wave = waves[self.wave][:]
+        self.wave_bg = temp_img
         """pause menu"""
-        self.pause = False
+        self.pause = True
         # self.music_on = True
-        # self.playPauseButton = PlayPauseButton(play_btn, pause_btn, 10, self.height - 85)
+        self.playPauseButton = PlayPauseButton(pause_btn, 10, self.height - 85)
         # self.soundButton = PlayPauseButton(sound_btn, sound_btn_off, 90, self.height - 85)
 
     def gen_enemies(self):
@@ -211,22 +222,6 @@ class Game:
                         pygame.quit()
                         sys.exit()
                         run = False
-                # # Down
-                # if event.type == pygame.K_s or event.type == pygame.K_DOWN:
-                #     print("down")
-                #     self.hero.move(0, -1)
-                # # left
-                # if event.type == pygame.K_a or event.type == pygame.K_LEFT:
-                #     print("left")
-                #     self.hero.move(-1, 0)
-                # # right
-                # if event.type == pygame.K_d or event.type == pygame.K_RIGHT:
-                #     print("right")
-                #     self.hero.move(1, 0)
-                # Attack - more future stuff
-                # if event.type == pygame.K_SPACE:
-                #     if player collide with enemy as a result:
-                #         enemy takes damage
 
                 """ For drag & Drop """
                 if event.type == pygame.MOUSEBUTTONUP:
@@ -238,8 +233,7 @@ class Game:
                                 not_allowed = True
 
                         if not not_allowed and self.point_to_line(self.moving_object):
-                            if self.moving_object.name in self.towers:
-                                self.towers.append(self.moving_object)
+                            self.towers.append(self.moving_object)
                             # elif self.moving_object.name in support_tower_names:
                             #     self.support_towers.append(self.moving_object)
 
@@ -247,47 +241,47 @@ class Game:
                             self.moving_object = None
 
                     """buy tower from buy menu concept"""
-                    # else:
-                    #     # look if you click on side menu
-                    #     side_menu_button = self.menu.get_clicked(pos[0], pos[1])
-                    #     if side_menu_button:
-                    #         cost = self.menu.get_item_cost(side_menu_button)
-                    #         if self.money >= cost:
-                    #             self.money -= cost
-                    #             self.add_tower(side_menu_button)
+                else:
+                    # look if you click on side menu
+                    side_menu_button = self.menu.get_clicked(pos[0], pos[1])
+                    if side_menu_button:
+                        cost = self.menu.get_item_cost(side_menu_button)
+                        if self.points >= cost:
+                            self.points -= cost
+                            self.add_tower(side_menu_button)
 
-                    #     # look if you clicked on attack tower or support tower
-                    #     btn_clicked = None
-                    #     if self.selected_tower:
-                    #         btn_clicked = self.selected_tower.menu.get_clicked(pos[0], pos[1])
-                    #         if btn_clicked:
-                    #             if btn_clicked == "Upgrade":
-                    #                 cost = self.selected_tower.get_upgrade_cost()
-                    #                 if self.money >= cost:
-                    #                     self.money -= cost
-                    #                     self.selected_tower.upgrade()
-                        
-                    #     # check for play or pause
-                    #     # if self.playPauseButton.click(pos[0], pos[1]):
-                    #     #     self.pause = not(self.pause)
-                    #     #     self.playPauseButton.paused = self.pause
+                    # look if you clicked on a tower
+                    btn_clicked = None
+                    if self.selected_tower:
+                        btn_clicked = self.selected_tower.menu.get_clicked(pos[0], pos[1])
+                        if btn_clicked:
+                            if btn_clicked == "Upgrade":
+                                cost = self.selected_tower.get_upgrade_cost()
+                                if self.points >= cost:
+                                    self.points -= cost
+                                    self.selected_tower.upgrade()
+                    
+                    # check for play or pause
+                    if self.playPauseButton.click(pos[0], pos[1]):
+                        self.pause = not(self.pause)
+                        self.playPauseButton.paused = self.pause
 
-                    #     # if self.soundButton.click(pos[0], pos[1]):
-                    #     #     self.music_on = not(self.music_on)
-                    #     #     self.soundButton.paused = self.music_on
-                    #     #     if self.music_on:
-                    #     #         pygame.mixer.music.unpause()
-                    #     #     else:
-                    #     #         pygame.mixer.music.pause()
+                    # if self.soundButton.click(pos[0], pos[1]):
+                    #     self.music_on = not(self.music_on)
+                    #     self.soundButton.paused = self.music_on
+                    #     if self.music_on:
+                    #         pygame.mixer.music.unpause()
+                    #     else:
+                    #         pygame.mixer.music.pause()
 
-                    #     if not(btn_clicked):
-                    #         # look if you clicked on a tower
-                    #         for tw in self.towers:
-                    #             if tw.click(pos[0], pos[1]):
-                    #                 tw.selected = True
-                    #                 self.selected_tower = tw
-                    #             else:
-                    #                 tw.selected = False
+                    if not(btn_clicked):
+                        # look if you clicked on a tower
+                        for tw in self.towers:
+                            if tw.click(pos[0], pos[1]):
+                                tw.selected = True
+                                self.selected_tower = tw
+                            else:
+                                tw.selected = False
 
             # loop through enemies
             if not self.pause:
@@ -341,9 +335,7 @@ class Game:
     def draw(self):
         """ Creates our background
         :returns: None"""
-        # TODO: Nothing seems to be drawing
-        self.win.fill((0, 0, 0))
-        self.win.blit(self.bg, (0, 0)) # (self.width, self.height))
+        self.win.blit(self.bg, (0, 0))
 
         """ used for path_creator() """
         # for p in self.clicks:
@@ -376,36 +368,36 @@ class Game:
         if self.moving_object:
             self.moving_object.draw(self.win)
 
-        # # draw menu
-        # self.menu.draw(self.win)
+        # draw menu
+        self.menu.draw(self.win)
 
-        # # draw play pause button
-        # self.playPauseButton.draw(self.win)
+        # draw play pause button
+        self.playPauseButton.draw(self.win)
 
         # # draw music toggle button
         # self.soundButton.draw(self.win)
 
-        # # draw lives
-        # text = self.life_font.render(str(self.lives), 1, (255,255,255))
-        # life = pygame.transform.scale(lives_img,(50,50))
-        # start_x = self.width - life.get_width() - 10
+        # draw lives
+        text = self.life_font.render(str(self.health), 1, (255,255,255))
+        life = pygame.transform.scale(temp_img,(50,50))
+        start_x = self.width - life.get_width() - 10
 
-        # self.win.blit(text, (start_x - text.get_width() - 10, 13))
-        # self.win.blit(life, (start_x, 10))
+        self.win.blit(text, (start_x - text.get_width() - 10, 13))
+        self.win.blit(life, (start_x, 10))
 
         # draw points
-        # text = self.life_font.render(str(self.points), 1, (255, 255, 255))
-        # points = pygame.transform.scale(star_img, (50, 50))
-        # start_x = self.width - life.get_width() - 10
+        text = self.life_font.render(str(self.points), 1, (255, 255, 255))
+        points = pygame.transform.scale(temp_img, (50, 50))
+        start_x = self.width - 40 # life.get_width() - 10
 
-        # self.win.blit(text, (start_x - text.get_width() - 10, 75))
-        # self.win.blit(points, (start_x, 65))
+        self.win.blit(text, (start_x - text.get_width() - 10, 75))
+        self.win.blit(points, (start_x, 65))
 
         # # draw lvl
         # self.win.blit(bg, (10,10))
         # text = self.life_font.render("Wave #" + str(self.wave), 1, (255,255,255))
+        # self.win.blit(text, (10 + self.wave_bg.get_width()/2 - text.get_width()/2, 25))
         # # maybe we don't need self.lvl_name, just lvl_name. Check for duplicating and useless code.
-        # self.win.blit(text, (10 + self.lvl_name.get_width()/2 - text.get_width()/2, 25))
 
         pygame.display.update()
     
@@ -429,8 +421,8 @@ class Game:
 
     def add_tower(self, name):
         x, y = pygame.mouse.get_pos()
-        name_list = ["buy_pebbles_shooter", "buy_mage", "buy_harvester", "buy_blockade_burgade"]
-        object_list = [Pebble_Shooter(x,y), Mage(x,y), Harvester(x,y), Blockade_Burgade(x,y)]
+        name_list = ["buy_pebble_shooter", "buy_mage", "buy_harvester", "empty_slot"] # "buy_blockade_burgade"]
+        object_list = [Pebble_Shooter(x,y), Mage(x,y), Harvester(x,y), None] # Blockade_Burgade(x,y)]
 
         try:
             obj = object_list[name_list.index(name)]

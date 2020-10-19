@@ -2,10 +2,10 @@
 import pygame
 import os
 import math
-# future menu
-"""from menu.menu import Menu
-menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.png")).convert_alpha(), (120, 70))
-upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.png")).convert_alpha(), (50, 50))"""
+from ..Menues.menu import Menu
+
+menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons", "temp_img.PNG")).convert_alpha(), (120, 70))
+upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons", "temp_img.PNG")).convert_alpha(), (50, 50))
 
 
 class Tower:
@@ -19,10 +19,8 @@ class Tower:
         self.level = 1
         self.range = 1
         self.selected = False
-        """define menu and buttons"""
-        # self.menu = Menu(self, self.x, self.y, menu_bg, [2000, "MAX"])
-        # self.menu.add_btn(upgrade_btn, "Upgrade")
-
+        self.menu = Menu(self, self.x, self.y, menu_bg, [2000, "MAX"])
+        self.menu.add_btn(upgrade_btn, "Upgrade")
         self.tower_imgs = []
         self.damage = 1
         self.max_health = 0
@@ -39,8 +37,8 @@ class Tower:
         win.blit(img, (self.x-img.get_width()//2, self.y-img.get_height()//2))
 
         # draw menu
-        # if self.selected:
-        #     self.menu.draw(win)
+        if self.selected:
+            self.menu.draw(win)
 
     def draw_radius(self,win):
         if self.selected:
@@ -105,9 +103,9 @@ class Tower:
         """
         self.x = x
         self.y = y
-        # self.menu.x = x
-        # self.menu.y = y
-        # self.menu.update()
+        self.menu.x = x
+        self.menu.y = y
+        self.menu.update()
 
     def collide(self, otherTower):
         x2 = otherTower.x

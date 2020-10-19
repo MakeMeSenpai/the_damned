@@ -17,12 +17,12 @@ class Enemy:
         self.path = [(-10, 169), (999, 170), (999, 327), (871, 371), (699, 412), (220, 454), (149, 465), (101, 514), (96, 708), (124, 760), (189, 794), (722, 799), (778, 766), (808, 699), (816, 597)]
         self.x = self.path[0][0]
         self.y = self.path[0][1]
-        self.img = None
         self.dis = 0
         self.path_pos = 0
         self.move_count = 0
         self.move_dis = 0
         self.imgs = []
+        self.img = None
         self.flipped = False
         self.max_health = 0
         self.speed_increase = 1.2
@@ -35,7 +35,7 @@ class Enemy:
 
         win.blit(self.img, (self.x - self.img.get_width()/2, self.y- self.img.get_height()/2 - 35))
         # and maybe add boss health bar in future
-        # self.draw_health_bar(win)
+        self.draw_health_bar(win)
 
     def draw_health_bar(self, win):
         """

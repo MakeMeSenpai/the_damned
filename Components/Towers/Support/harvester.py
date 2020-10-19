@@ -4,14 +4,14 @@ import os
 import math
 import time
 from ..tower import Tower
-# from menu.menu import Menu
+from ...Menues.menu import Menu
 
-# menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "menu.PNG")).convert_alpha(), (120, 70))
-# upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("game_assets", "upgrade.PNG")).convert_alpha(), (50, 50))
+menu_bg = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons", "temp_img.PNG")).convert_alpha(), (120, 70))
+upgrade_btn = pygame.transform.scale(pygame.image.load(os.path.join("Assets/Icons", "temp_img.PNG")).convert_alpha(), (50, 50))
 
 
 tower_imgs = []
-# shooter_imgs = []
+shooter_imgs = []
 
 # load tower images
 for x in range(1):
@@ -20,9 +20,10 @@ for x in range(1):
         (90, 90)))
 
 # load shooter images
-# for x in range(1):
-#     shooter_imgs.append(
-#         pygame.image.load(os.path.join("Assets/Towers/Support/harvester/shooter_0" + str(x) + ".png")).convert_alpha())
+for x in range(1):
+    shooter_imgs.append(
+        pygame.transform.scale(pygame.image.load(os.path.join("Assets/Towers/Support/harvester/shooter_0" + str(x) + ".png")).convert_alpha(), 
+        (50, 50)))
 
 class Harvester(Tower):
     """Collects materials for the cuase! (give players extra points)
@@ -32,10 +33,13 @@ class Harvester(Tower):
         self.range = 0
         self.effect = [0.2, 0.4]
         self.tower_imgs = tower_imgs[:]
-        # self.shooter_imgs = shooter_imgs[:]
+        self.shooter_imgs = shooter_imgs[:]
         self.width = self.height = 90
         self.name = "harvester"
-        self.price = [2000]
+        self.price = [2000, 4000, 8000]
+        self.sell_price = [1500, 3000, 6000]
+        self.menu = Menu(self, self.x, self.y, menu_bg, [2000, 5000,"MAX"])
+        self.menu.add_btn(upgrade_btn, "Upgrade")
 
     def draw(self, win):
         super().draw_radius(win)
