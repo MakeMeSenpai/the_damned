@@ -19,6 +19,7 @@ from Components.Enemies.archer import Archer
 from Components.Enemies.murauder import Murauder
 # imports Towers
 from Components.Towers.tower import Tower
+from Components.Towers.Base.base import Base
 from Components.Towers.Shooters.pebble_shooter import Pebble_Shooter
 from Components.Towers.Shooters.mage import Mage
 from Components.Towers.Roadblocks.blockade_burgade import Blockade_Burgade
@@ -80,8 +81,10 @@ class Game:
         self.heroes = [] # "demon", "angle", "werewolf", "vampire"]
         # all our towers
         self.towers = []
+        # and of course our main base
+        self.base = Base(816, 597)
         self.health = 150
-        self.points = 250
+        self.points = 5000
         self.bg = pygame.image.load(os.path.join("Assets/Backgrounds", "demo-level.png"))
         self.clicks = [] #mouse positions
         self.timer = time.time()
@@ -230,12 +233,12 @@ class Game:
                 to_del = []
                 for en in self.enemies:
                     en.move()
-                    if en.x < -15:
+                    if self.base.collision(en.x, en.y):
                         to_del.append(en)
 
                 # delete all enemies off the screen
                 for d in to_del:
-                    # self.health -= 1
+                    self.health -= 1
                     self.enemies.remove(d)
 
                 # loop through attack towers
@@ -284,6 +287,9 @@ class Game:
         """ used for path_creator() """
         # for p in self.clicks:
         #     pygame.draw.circle(self.win, (155, 0, 155), (p[0], p[1]), 5, 0)
+
+        # draw our home base -should change base on lvl
+        self.base.draw(self.win)
 
         # draw placement rings
         if self.moving_object:

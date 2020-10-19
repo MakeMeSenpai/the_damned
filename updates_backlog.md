@@ -1,3 +1,6 @@
 # Preveious Updates Backlog
+- 0.0.8
+    - place holders have been added, as well as a boat load of code that we still can't see. I don't suggest coding blidly, but when you are stuck, you still gotta keep working. As well, More Lore was added to this page to give you a better insight on the world I am trying to build here.
+
 - 0.0.5
     - Nothing but a white screen appears. Not very exciting but there are currently issues with our Pygame's draw funcs. So Additions that have been added are all none-visible. Such as object creations etc.

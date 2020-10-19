@@ -12,6 +12,7 @@ from ..tower import Tower
 tower_imgs = []
 # TODO: Missing shooters for all towers
 # shooter_imgs = []
+
 # load tower images
 for x in range(1):
     tower_imgs.append(pygame.transform.scale(

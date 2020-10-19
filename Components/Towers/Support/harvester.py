@@ -12,6 +12,7 @@ from ..tower import Tower
 
 tower_imgs = []
 # shooter_imgs = []
+
 # load tower images
 for x in range(1):
     tower_imgs.append(pygame.transform.scale(
@@ -47,5 +48,6 @@ class Harvester(Tower):
         :return: None
         """
         while points != 99999:
-            time.sleep(5)
+            # sleep is unusable in this setting
+            # time.sleep(5) 
             points += 321

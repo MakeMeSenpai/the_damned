@@ -12,6 +12,7 @@
 
 # tower_imgs = []
 # shooter_imgs = []
+
 # # load tower images
 # for x in range(1):
 #     tower_imgs.append(pygame.transform.scale(
