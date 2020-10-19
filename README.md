@@ -73,7 +73,7 @@ ___
 ### Previous Updates:
 {Last Update: 10/19/20}
 - 0.2.1
-    - The monster has been born! The Hero for now, will be chosen randomly until we get a character selection page going. You can now see and move your hero threwout the map... even tho it's pretty slow moving.
+    - The monster has been born! The Hero, -for now- will be chosen randomly until we get a character selection page going. You can now see and move your character threwout the map... even though it's pretty slow moving.
 
 - 0.1.9
     - A house is displayed! And with that, the player can now loose the game if too many enemies get into collision with it.
