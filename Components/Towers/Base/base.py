@@ -18,7 +18,7 @@ tower_imgs = []
 for x in range(1):
     tower_imgs.append(pygame.transform.scale(
         pygame.image.load(os.path.join("Assets/Towers/Base/tower_0" + str(x) + ".PNG")).convert_alpha(),
-        (90, 90)))
+        (120, 120)))
 
 # load shooter images
 # for x in range(1):

@@ -73,7 +73,7 @@ ___
 ### Previous Updates:
 {Last Update: 10/18/20}
 - 0.1.9
-    - A house is displayed! And with that, the player can now loose the game if too many enemies get into collision witht it.
+    - A house is displayed! And with that, the player can now loose the game if too many enemies get into collision with it.
 
 - 0.1.3
     - Added git master branches for safer development. This lets me experiment with feature requests and more without breaking the current game. As well walking enemies who follow the path now!
