@@ -14,7 +14,7 @@ class Enemy:
         self.health = 1
         self.vel = 3
         # concept path for demo-level
-        self.path = [(0, 169), (999, 170), (999, 327), (871, 371), (699, 412), (220, 454), (149, 465), (101, 514), (96, 708), (124, 760), (189, 794), (722, 799), (778, 766), (808, 699), (816, 597)]
+        self.path = [(-10, 169), (999, 170), (999, 327), (871, 371), (699, 412), (220, 454), (149, 465), (101, 514), (96, 708), (124, 760), (189, 794), (722, 799), (778, 766), (808, 699), (816, 597)]
         self.x = self.path[0][0]
         self.y = self.path[0][1]
         self.img = None
@@ -34,8 +34,8 @@ class Enemy:
         self.img = self.imgs[self.animation_count]
 
         win.blit(self.img, (self.x - self.img.get_width()/2, self.y- self.img.get_height()/2 - 35))
-        # maybe add boss health bar in future
-        self.draw_health_bar(win)
+        # and maybe add boss health bar in future
+        # self.draw_health_bar(win)
 
     def draw_health_bar(self, win):
         """
@@ -116,15 +116,4 @@ class Enemy:
         if self.health <= 0:
             return True
         return False
-""" Used to delete item? """
-# self.x = self.path[0][0]
-# self.y = self.path[0][1]
-# self.img = None
-# self.dis = 0
-# self.path_pos = 0
-# self.move_count = 0
-# self.move_dis = 0
-# self.imgs = []
-# self.flipped = False
-# self.max_health = 0
  

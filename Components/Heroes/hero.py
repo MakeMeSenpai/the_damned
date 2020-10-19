@@ -53,31 +53,25 @@ class Hero:
         Move hero using key inputs (wasd, or arrow keys, and spacebar to attack)
         :return: None
         """
-        # Up
-        if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-            move right
-        # Down
-        if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-            move right
-        # left
-        if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-            move right
-        # right
-        if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-            move right
-        # Attack
-        if pygame.event_get() == spacebar:
-            if player collide with enemy as a result:
-                enemy takes damage
-                # special ability stretch
-                if attack kills enemy:
-                    self.ability_points += random.randrange(1, 10000)/100
-                    if 555 <= self.ability_points:
-                        give players the option to activate special ability
-                        should display in some start thing, in which the user can click
-        # stops moving
-        else:
-            dont move when no keyboard commands are being held down
+        # # Up
+        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
+        #     move right
+        # # Down
+        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
+        #     move right
+        # # left
+        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
+        #     move right
+        # # right
+        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
+        #     move right
+        # # Attack
+        # if pygame.event_get() == spacebar:
+        #     if player collide with enemy as a result:
+        #         enemy takes damage
+        # # stops moving
+        # else:
+        #     dont move when no keyboard commands are being held down
         pass
 
     def hit(self, damage):
@@ -90,16 +84,3 @@ class Hero:
         if self.stamina <= 0:
             return True
         return False
-
-""" kills player?"""
-# self.x = self.path[0][0]
-# self.y = self.path[0][1]
-# self.img = None
-# self.dis = 0
-# self.path_pos = 0
-# self.move_count = 0
-# self.move_dis = 0
-# self.imgs = []
-# self.flipped = False
-# self.max_stamina = 0
-# self.ability_points = 0

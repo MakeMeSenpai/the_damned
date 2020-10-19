@@ -37,7 +37,8 @@ ___
     - [x] **Stretch:** Create Specials Class
     - [x] **Stretch:** Create Sub-Special Class
 - Functionality 
-    - [ ] Enemies must follow the path and attack Home base. Bringing down Hero's Health
+    - [x] Enemies must follow the path
+    - [ ] Enemies attack Home base. Bringing down Hero's Health
     - [ ] Heros must be able to move on the path
     - [ ] Enemies should stop if they run into the Hero
     - [ ] Heroes and Enemies should be able to attack one another. Thus killing Enemies and bringing down a Hero's Stamina
