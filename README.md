@@ -53,11 +53,11 @@ ___
 ### Potential Features:
 - GitMaster
     - [x] Set up tester branch -for expirements (such as a Feature request)
-    - [ ] Set up developer branch -for actual development
-    - [ ] Set up demo branch -for prereleases and bug fixing (such as a hotfix branch)
+    - [x] Set up developer branch -for actual development
+    - [x] Set up demo branch -for prereleases and bug fixing (such as a hotfix branch)
 - Level-up
     - [ ] Create a level-up system for the hero
-    - [ ] let players upgrade their hero or potetailly unlock new towers!
+    - [ ] let players upgrade their hero or potentially unlock new towers!
 - Lively Enviroment
     - [ ] Create Items Class
     - [ ] Create Sub-Item Class
@@ -71,6 +71,9 @@ ___
 
 ### Previous Updates:
 {Last Update: 10/18/20}
+- 0.1.3
+    - Added git master branches for safer development. This lets me experiment with feature requests and more without breaking the current game. As well as other banches for more defined updates.
+
 - 0.1.0
     - Background is now visual and ready!! Woot, woot! We are very much on our way to getting this thing off the ground and running.
 
