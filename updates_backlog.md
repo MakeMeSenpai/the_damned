@@ -1,4 +1,7 @@
 # Preveious Updates Backlog
+- 0.1.0
+    - Background is now visual and ready!! Woot, woot! We are very much on our way to getting this thing off the ground and running.
+
 - 0.0.8
     - place holders have been added, as well as a boat load of code that we still can't see. I don't suggest coding blidly, but when you are stuck, you still gotta keep working. As well, More Lore was added to this page to give you a better insight on the world I am trying to build here.
 

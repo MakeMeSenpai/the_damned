@@ -1,4 +1,4 @@
-# The Damned V.0.1.9
+# The Damned V.0.2.1
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for a deeper description.
 
 ## Index:
@@ -39,7 +39,7 @@ ___
 - Functionality 
     - [x] Enemies must follow the path
     - [x] Enemies attack Home base. Bringing down Hero's Health
-    - [ ] Heros must be able to move on the path
+    - [x] Heros must be able to move on the path
     - [ ] **Stretch:** Enemies should stop if they run into the Hero
     - [ ] **Stretch:**Heroes and Enemies should be able to attack one another. Thus killing Enemies and bringing down a Hero's Stamina
 - Towers and CRUD
@@ -71,15 +71,15 @@ ___
 
 
 ### Previous Updates:
-{Last Update: 10/18/20}
+{Last Update: 10/19/20}
+- 0.2.1
+    - The monster has been born! The Hero for now, will be chosen randomly until we get a character selection page going. You can now see and move your hero threwout the map... even tho it's pretty slow moving.
+
 - 0.1.9
     - A house is displayed! And with that, the player can now loose the game if too many enemies get into collision with it.
 
 - 0.1.3
     - Added git master branches for safer development. This lets me experiment with feature requests and more without breaking the current game. As well walking enemies who follow the path now!
-
-- 0.1.0
-    - Background is now visual and ready!! Woot, woot! We are very much on our way to getting this thing off the ground and running.
 
 ___
 ## Info

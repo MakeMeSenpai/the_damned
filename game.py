@@ -78,7 +78,9 @@ class Game:
         # everything will spawn in demo level, but enemies should spawn based on lvl
         self.enemies = [] # "peasant", "knight", "archer", "murauder"]
         # Demo-level will auto select. But players will be able to choose their hero in future development.
-        self.heroes = [] # "demon", "angle", "werewolf", "vampire"]
+        # these lines should definitly look better
+        self.heroes = [Angel(808, 699, 70, 70), Demon(808, 699, 70, 70), Vampire(808, 699, 70, 70), Werewolf(808, 699, 70, 70)]
+        self.hero = random.choice(self.heroes)
         # all our towers
         self.towers = []
         # and of course our main base
@@ -131,7 +133,7 @@ class Game:
         run = True
         clock = pygame.time.Clock()
         while run:
-            clock.tick(30) #FPS
+            clock.tick(4) #FPS - youll get faster fps once you optimize this code!
             if self.pause == False:
                 # gen monsters
                 if time.time() - self.timer >= random.randrange(1,6)/3:
@@ -168,6 +170,65 @@ class Game:
                 # self.path_creator(event)
                 # self.level_selector()
 
+                """ moves the player around and controls all our keyboard commands"""
+                # TODO: should move if held down -should be smaller but whatever
+                if event.type == pygame.KEYDOWN:
+                    # ord changes key input into ints
+                    if event.key == pygame.K_UP or event.key == ord('w'):
+                        print('up')
+                        self.hero.move(0, -1)
+                    if event.key == pygame.K_DOWN or event.key == ord('s'):
+                        print('down')
+                        self.hero.move(0, 1)
+                    if event.key == pygame.K_LEFT or event.key == ord('a'):
+                        print('left')
+                        self.hero.move(-1, 0)
+                    if event.key == pygame.K_RIGHT or event.key == ord('d'):
+                        print('right')
+                        self.hero.move(1, 0)
+                    if event.key == pygame.K_SPACE or event.key == 32:
+                        print('attack')
+                        # future development
+
+                """ if no key is being pressed """
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_UP or event.key == ord('w'):
+                        print('stop up')
+                        self.hero.move(0, 0)
+                    if event.key == pygame.K_UP or event.key == ord('w'):
+                        print('stop down')
+                        self.hero.move(0, 0)
+                    if event.key == pygame.K_LEFT or event.key == ord('a'):
+                        print('stop left')
+                        self.hero.move(0, 0)
+                    if event.key == pygame.K_RIGHT or event.key == ord('d'):
+                        print('stop right')
+                        self.hero.move(0, 0)
+                    if event.key == pygame.K_SPACE or event.key == 32:
+                        print('stop attack')
+                        # future development
+                    if event.key == ord('q'):
+                        pygame.quit()
+                        sys.exit()
+                        run = False
+                # # Down
+                # if event.type == pygame.K_s or event.type == pygame.K_DOWN:
+                #     print("down")
+                #     self.hero.move(0, -1)
+                # # left
+                # if event.type == pygame.K_a or event.type == pygame.K_LEFT:
+                #     print("left")
+                #     self.hero.move(-1, 0)
+                # # right
+                # if event.type == pygame.K_d or event.type == pygame.K_RIGHT:
+                #     print("right")
+                #     self.hero.move(1, 0)
+                # Attack - more future stuff
+                # if event.type == pygame.K_SPACE:
+                #     if player collide with enemy as a result:
+                #         enemy takes damage
+
+                """ For drag & Drop """
                 if event.type == pygame.MOUSEBUTTONUP:
                     # if you're moving an object and click
                     if self.moving_object:
@@ -290,6 +351,7 @@ class Game:
 
         # draw our home base -should change base on lvl
         self.base.draw(self.win)
+        self.hero.draw(self.win)
 
         # draw placement rings
         if self.moving_object:

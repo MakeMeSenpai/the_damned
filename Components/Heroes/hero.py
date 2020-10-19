@@ -48,31 +48,32 @@ class Hero:
                 return True
         return False
     
-    def move(self):
+    def move(self, x_change=0, y_change=0):
         """
         Move hero using key inputs (wasd, or arrow keys, and spacebar to attack)
         :return: None
         """
-        # # Up
-        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-        #     move right
-        # # Down
-        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-        #     move right
-        # # left
-        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-        #     move right
-        # # right
-        # if pygame.event_get() == d-key or pygame.event_get() == right arrow key:
-        #     move right
-        # # Attack
-        # if pygame.event_get() == spacebar:
-        #     if player collide with enemy as a result:
-        #         enemy takes damage
-        # # stops moving
-        # else:
-        #     dont move when no keyboard commands are being held down
-        pass
+        # we moved functions into game.py becuase it's simpler
+        # it needed .event, which is not availible in this file
+        # but this should now update the heros position based on those movements
+        speed = 5
+        if x_change != 0 or y_change != 0:
+            self.animation_count += 1
+            if self.animation_count >= len(self.imgs):
+                self.animation_count = 0
+            # up 
+            if y_change > 0:
+                self.y += speed
+            # down 
+            if y_change < 0:
+                self.y -= speed
+            # left
+            if x_change < 0:
+                self.x -= speed
+            # right 
+            if x_change > 0:
+                self.x += speed
+                
 
     def hit(self, damage):
         """
