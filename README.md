@@ -1,4 +1,4 @@
-# The Damned V.0.1.0
+# The Damned V.0.1.3
 This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for deeper description.
 
 ## Index:
@@ -26,7 +26,7 @@ ___
     - [x] Complete Research on your topic
     - [x] Create Wireframe for demo level
     - [x] Setup PyGame Window
-    - [ ] Impliment Demo Level design into Pygame Background
+    - [x] Impliment Demo Level design into Pygame Background
 - Create Objects
     - [x] Create Heroes Class
     - [x] Create Sub-Hero Classes
@@ -34,11 +34,11 @@ ___
     - [x] Create Sub-Enemy Classes
     - [x] Create Towers Class
     - [x] Create Sub-Tower Classes
-    - [ ] **Stretch:** Create Specials Class
-    - [ ] **Stretch:** Create Sub-Special Class
+    - [x] **Stretch:** Create Specials Class
+    - [x] **Stretch:** Create Sub-Special Class
 - Functionality 
-    - [ ] Heros must be able to move on the path
     - [ ] Enemies must follow the path and attack Home base. Bringing down Hero's Health
+    - [ ] Heros must be able to move on the path
     - [ ] Enemies should stop if they run into the Hero
     - [ ] Heroes and Enemies should be able to attack one another. Thus killing Enemies and bringing down a Hero's Stamina
 - Towers and CRUD
@@ -52,7 +52,7 @@ ___
 
 ### Potential Features:
 - GitMaster
-    - [ ] Set up tester branch -for expirements (such as a Feature request)
+    - [x] Set up tester branch -for expirements (such as a Feature request)
     - [ ] Set up developer branch -for actual development
     - [ ] Set up demo branch -for prereleases and bug fixing (such as a hotfix branch)
 - Level-up
@@ -99,15 +99,15 @@ grabbing the game's necessary packages
 - There's no game to play quite yet! I've been having touble with Pygames blit functions.
 
 ### More Lore
-- In a world that is blind to the good of magic, mid evil kingdoms set to vanquish all evils. Forced into hiding again and again, you now wish to take over the land. and it seems that other magical beings are starting to detest the humans as well...
+- In a world that is blind to the good of magic, mid evil kingdoms set to vanquish all "evils". You have been mistreated, and forced into hiding time and time again.  It seems that other magical beings are starting to detest the humans as well...
 - The Angel:
-    - Coming to this place to help those in need. You have been long appriciated by those who had fallen deathly ill. This was until they saw your wings... the kingdom has now claimed you guilty of which craft! Infecting the poor souls, and the sick you have helped now want you dead. Even the rightous can be considered monsters. Your goal is to reclaim the land for the Holy Father.
+    - Coming to this place to help those in need. You have been long appriciated by those who had fallen deathly ill. This was until they saw your wings... the kingdom has now claimed you guilty of witch craft! Infecting the poor souls, and the sick you have helped now want you dead. Even the rightous can be considered monsters. Your goal is to reclaim the land for the Holy Father.
 - The Demon:
-    - Escaping from hell is no easy task. You find joy in slaughtering the weak. Damn them all! But now everyone knows about the monster you really are, and now want you dead. Your will is your own. Too much pride isn't always a bad thing and niehter is greed. They will feel your wrath as you take over the land.
+    - Escaping from hell is no easy task. You find joy in slaughtering the weak. Damn them all! But now everyone knows about the monster you really are, and now want you dead. Your will is your own. Too much pride isn't always a bad thing and niether is greed. They will feel your wrath as you take over the land.
 - The Vampire:
-    - You have been around for longer than you can rememeber. Must have been 4, or even 500 years since you first sunk your teeth into that windows neck. You spend most of your time reading, and enjoying elegancy. But the towns folk started to realize that people were disappearing. The night watch became more and more difficult to hide from, and you were caught in the act. Now the inputant humans want you dead. The daywalkers are nothing but insolent cattle, and now you must put them in their place.
+    - You have been around for longer than you can rememeber. Must have been 4, or even 500 years since you first sunk your teeth into that widow's neck. You spent most of your time reading, and enjoying elegancy. But the towns folk started to realize that people were disappearing. The night watch became more and more difficult to hide from, and you were caught in the act. Now the inputant humans want you dead. The daywalkers are nothing but insolent cattle, and now you must put them in their place.
 - The WereWolf:
-    - You found out with when you were 10 just what you were... blacking out and killing your childhood best friend. Werewolves have a lack of controll, especailly when young. Every full moon the tranformation period lasting longer, fur growing longer, and teeth growing sharper. It's not your fault you were born this way. You just wanted to be like everybody else. The last full moon as always changed you into your form, and you have better learned how to control it. However, now you just won't turn back. Stuck in your howling state, some noisey kids had peeped into your window and had sworn to see a monster. Now the townsmen want you dead. You tried to be friends with them, and you tried to be them; But time and time again they take. May vengence be yours.
+    - You found out with when you were 10 just what you were... blacking out and killing your childhood best friend. Werewolves have a lack of control, especially when young. Every full moon the tranformation period lasting longer, fur growing longer, and teeth growing sharper. It's not your fault you were born this way. You just wanted to be like everybody else. The last full moon -as always- changed you into your form, and you have better learned how to control it. However, now you just won't turn back. Stuck in your howling state, some nosey kids had peeped into your window and had sworn to have seen a monster. Now the townsmen want you dead. You tried to be friends with them, and you tried to be them; But time and time again they take. May vengence be yours.
 
 ___
 ## Conclusion

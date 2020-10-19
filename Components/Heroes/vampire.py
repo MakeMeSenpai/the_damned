@@ -23,3 +23,4 @@ class Vampire(Hero):
         self.max_stamina = 500
         self.stamina = self.max_stamina
         self.special = "Life Drain"
+        self.activate_special = 500 #level up stuff should make this more expensive

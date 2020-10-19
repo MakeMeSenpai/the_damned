@@ -106,7 +106,7 @@ class Mage(Tower):
             first_enemy = enemy_closest[0]
             if self.archer_count == 50:
                 if first_enemy.hit(self.damage) == True:
-                    points = first_enemy.points * 2
+                    points = first_enemy.points
                     enemies.remove(first_enemy)
 
             if first_enemy.x > self.x and not(self.left):

@@ -23,3 +23,4 @@ class Demon(Hero):
         self.max_stamina = 500
         self.stamina = self.max_stamina
         self.special = "Firey Wrath"
+        self.activate_special = 500 #level up stuff should make this more expensive
