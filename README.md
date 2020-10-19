@@ -73,7 +73,7 @@ ___
 ### Previous Updates:
 {Last Update: 10/18/20}
 - 0.1.3
-    - Added git master branches for safer development. This lets me experiment with feature requests and more without breaking the current game. As well as other banches for more defined updates.
+    - Added git master branches for safer development. This lets me experiment with feature requests and more without breaking the current game. As well walking enemies who follow the path now!
 
 - 0.1.0
     - Background is now visual and ready!! Woot, woot! We are very much on our way to getting this thing off the ground and running.
