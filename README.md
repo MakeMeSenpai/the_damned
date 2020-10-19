@@ -1,5 +1,5 @@
 # The Damned V.0.1.3
-This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for deeper description.
+This is a Tower Defence Game, based on an old childhood favorite. Pick a Hero(/Monster) and fend off the wretched humans! This game is still in early development.Check out "More Lore" for a deeper description.
 
 ## Index:
 1. [Checklist](#checklist)
